@@ -12,17 +12,6 @@ public class Loops {
 		// calculateDrugPotency(0.04, 50.0);
 	}
 
-	// public static int findLength(String str) {
-		
-	// 	int length = 0;
-
-	// 	for (int i = 0 ; i < str.length() ; i++) {
-	// 		length++;
-	// 	}
-
-	// 	return length;
-
-	// }
 
 	public static void calculateDrugPotency(double percentLoss, double minEffective) {
 		double effectiveness = 100.0;
@@ -42,18 +31,20 @@ public class Loops {
 
 	public static void calculateE(int x) {
 		int n = 1;
+		long nFact = n;
 		double sum = 1.0;
-		double term = 1.0;
-		while (sum > (1.0 * Math.pow(10.0, -12.0))) {
-			sum += term * (x / n);
-
+		double term = Math.pow(x, n)/nFact;
+		while (term > (Math.pow(10.0, -12.0))) {
+			term = Math.pow(x, n)/nFact;
 			sum += term;
-			System.out.println("n:" + n + "\t term:" + term + "\t sum:" + sum);
-			n++;
 
-			if (n > 10) {
-				return;
-			}
+			System.out.println("n:" + n + "\t term:" + term + "\t sum:" + sum);
+
+			n++;
+			nFact *= n;
 		}
+		System.out.println("");
+		System.out.println("My \t e^x: \t" + sum);
+		System.out.println("Real \t e^x: \t" + Math.exp(x));
 	}
 }
