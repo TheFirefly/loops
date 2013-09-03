@@ -5,10 +5,12 @@ public class Loops {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
-		System.out.print("Enter x: \t");
-		int x = input.nextInt();
-		calculateE(x);
+		System.out.print("Enter n: ");
+		int n = input.nextInt();
+		
+		calculateHailsoneSequence(n);
 
+		//calculateE(x);
 		// calculateDrugPotency(0.04, 50.0);
 	}
 
@@ -46,5 +48,28 @@ public class Loops {
 		System.out.println("");
 		System.out.println("My \t e^x: \t" + sum);
 		System.out.println("Real \t e^x: \t" + Math.exp(x));
+	}
+
+	public static void calculateHailsoneSequence(int n) {
+		int sequenceLength = 0;
+		int max = n;
+		int newN = n;
+		while (n != 1) {
+			if (isEven(n)) {
+				newN = n / 2;
+			} else {
+				newN = (3 * n) + 1;
+			}
+			sequenceLength++;
+			max = Math.max(max, newN);
+			n = newN;
+		}
+
+		System.out.println("Sequence length: " + sequenceLength++);
+		System.out.println("Max number: " + max);
+	}
+
+	private static boolean isEven(int x) {
+		return x % 2 == 0;
 	}
 }
