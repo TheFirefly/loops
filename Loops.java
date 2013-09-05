@@ -16,7 +16,7 @@ public class Loops {
 		// System.out.print("Enter n: ");
 		// long n = input.nextLong();
 		
-		// calculateHailsoneSequence(n);
+		// calculateHailstoneSequence(n);
 		
 		findNumbersNotInHailstoneSequence();
 
