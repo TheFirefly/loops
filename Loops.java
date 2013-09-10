@@ -92,7 +92,7 @@ public class Loops {
 
 	public static void findNumbersNotInHailstoneSequence() {
 		long x = 2;
-		while (x <= 1000 && amountInSequence < 1000) {
+		while (amountInSequence < 1000) {
 			calculateHailstoneSequence(x);
 			x++;
 		}
